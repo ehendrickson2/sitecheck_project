@@ -1,9 +1,9 @@
 # checker.py
 
-import asyncio
-import aiohttp
 from http.client import HTTPConnection
 from urllib.parse import urlparse
+import asyncio
+import aiohttp
 
 def site_is_online(url, timeout=2):
     """Return True if the target URL is online.
