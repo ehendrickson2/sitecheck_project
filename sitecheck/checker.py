@@ -4,8 +4,10 @@ from http.client import HTTPConnection
 from urllib.parse import urlparse
 
 def site_is_online(url, timeout=2):
-    # Return True if the target URL is online.
-    # Raise an exception otherwise.
+    """Return True if the target URL is online.
+    
+    Raise an exception otherwise.
+    """
     error = Exception("Unknown error")
     parser = urlparse(url)
     # uses the netloc url or grabs the base url

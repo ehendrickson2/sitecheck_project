@@ -3,7 +3,7 @@
 import argparse
 
 def read_user_cli_input():
-    # Get CLI arguments and options
+    """Get CLI arguments and options"""
     parser = argparse.ArgumentParser(
         prog="sitecheck", description="Check if a website is available"
     )
