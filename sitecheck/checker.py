@@ -8,6 +8,9 @@ import functools
 import aiohttp
 
 def response_time(func):
+    """Timer function, @response_time to wrap a function and output
+    the functions run time.
+    """
     @functools.wraps(func)
     def wrapper_timer(*args, **kwargs):
         time_before = time.perf_counter()
