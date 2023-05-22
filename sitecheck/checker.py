@@ -3,8 +3,22 @@
 from http.client import HTTPConnection
 from urllib.parse import urlparse
 import asyncio
+import time
+import functools
 import aiohttp
 
+def response_time(func):
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        time_before = time.perf_counter()
+        result = func(*args, **kwargs)
+        time_after = time.perf_counter()
+        response_time = time_after - time_before
+        print(f"Response time: {response_time:0.4f} seconds")
+        return result
+    return wrapper_timer
+
+@response_time
 def site_is_online(url, timeout=2):
     """Return True if the target URL is online.
     

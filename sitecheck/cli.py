@@ -37,7 +37,7 @@ def read_user_cli_input():
     return parser.parse_args()
 
 def display_check_result(result, url, error=""):
-    # Display the result of a connectivity check.
+    """Display the result of a connectivity check."""
     print(f'The status of "{url}" is:', end=" ")
     if result:
         print('"Online!" 👍')
